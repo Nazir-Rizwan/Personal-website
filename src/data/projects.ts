@@ -40,7 +40,7 @@ export const projects: Project[] = [
   },
   {
     id: 'wiring-diagrams',
-    title: 'Wiring Diagram Engine',
+    title: 'Wiring Diagram Generator',
     type: 'Professional Project',
     description:
       'A logic-driven engine that auto-generates 11"×17" wiring diagrams from structured data — eliminating 90% of manual diagram work.',
