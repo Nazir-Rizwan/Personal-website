@@ -6,6 +6,7 @@ on:
       - main
       - staging
       - master
+      - add-CICD-conf
 
 jobs:
   build:
