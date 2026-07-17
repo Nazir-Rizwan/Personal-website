@@ -4,8 +4,8 @@ import { MapPin, Calendar, ChevronDown, ChevronUp } from 'lucide-react'
 import { experiences } from '../../data/experience'
 
 const companyAccents: Record<string, { primary: string; glow: string; label: string }> = {
-  techverx: { primary: '#22d3ee', glow: 'rgba(34,211,238,0.12)', label: 'Current' },
-  visnext: { primary: '#fbbf24', glow: 'rgba(251,191,36,0.1)', label: 'Previous' },
+  techverx: { primary: '#3b82f6', glow: 'rgba(59,130,246,0.12)', label: 'Current' },
+  visnext: { primary: '#8b5cf6', glow: 'rgba(139,92,246,0.1)', label: 'Previous' },
 }
 
 const ExperienceCard = ({
@@ -45,15 +45,15 @@ const ExperienceCard = ({
       >
         {/* Header */}
         <button
-          className="w-full text-left p-6 flex items-start justify-between gap-4"
+          className="w-full text-left p-7 flex items-start justify-between gap-4"
           onClick={() => setExpanded((v) => !v)}
         >
           <div className="flex-1 min-w-0">
-            <div className="flex flex-wrap items-center gap-2.5 mb-1.5">
+            <div className="flex flex-wrap items-center gap-2.5 mb-2">
               <h3 className="font-display text-2xl text-white tracking-wide">{exp.company}</h3>
               {exp.current && (
                 <span
-                  className="font-mono text-[10px] tracking-widest uppercase px-2.5 py-0.5 rounded-full border"
+                  className="font-mono text-xs tracking-widest uppercase px-2.5 py-0.5 rounded-full border"
                   style={{
                     color: accent.primary,
                     borderColor: `${accent.primary}40`,
@@ -64,28 +64,28 @@ const ExperienceCard = ({
                 </span>
               )}
             </div>
-            <p className="font-body font-semibold text-slate-300 text-base mb-3">{exp.role}</p>
-            <div className="flex flex-wrap items-center gap-4 font-mono text-xs text-slate-500">
+            <p className="font-body font-semibold text-slate-300 text-lg mb-3">{exp.role}</p>
+            <div className="flex flex-wrap items-center gap-4 font-mono text-sm text-slate-500">
               <span className="flex items-center gap-1.5">
-                <Calendar size={12} />
+                <Calendar size={13} />
                 {exp.period}
               </span>
               <span className="flex items-center gap-1.5">
-                <MapPin size={12} />
+                <MapPin size={13} />
                 {exp.location}
               </span>
             </div>
           </div>
 
           <div
-            className="w-8 h-8 rounded-lg border flex-shrink-0 flex items-center justify-center transition-all duration-200 mt-1"
+            className="w-9 h-9 rounded-lg border flex-shrink-0 flex items-center justify-center transition-all duration-200 mt-1"
             style={{
               borderColor: `${accent.primary}30`,
               backgroundColor: `${accent.primary}08`,
               color: accent.primary,
             }}
           >
-            {expanded ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
+            {expanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
           </div>
         </button>
 
@@ -100,14 +100,14 @@ const ExperienceCard = ({
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
               className="overflow-hidden"
             >
-              <div className="px-6 pb-6 space-y-5">
+              <div className="px-7 pb-7 space-y-5">
                 <div
                   className="h-px"
                   style={{
                     background: `linear-gradient(to right, ${accent.primary}30, transparent)`,
                   }}
                 />
-                <p className="font-body text-sm text-slate-400 leading-relaxed">
+                <p className="font-body text-base text-slate-400 leading-relaxed">
                   {exp.description}
                 </p>
                 <ul className="space-y-3">
@@ -117,10 +117,10 @@ const ExperienceCard = ({
                       initial={{ opacity: 0, x: -12 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.07 }}
-                      className="flex items-start gap-3 font-body text-sm text-slate-400"
+                      className="flex items-start gap-3 font-body text-base text-slate-400"
                     >
                       <span
-                        className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
+                        className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0"
                         style={{ backgroundColor: accent.primary }}
                       />
                       {h}
@@ -131,7 +131,7 @@ const ExperienceCard = ({
                   {exp.tech.map((t) => (
                     <span
                       key={t}
-                      className="font-mono text-[11px] px-2.5 py-1 rounded-md border"
+                      className="font-mono text-sm px-2.5 py-1 rounded-md border"
                       style={{
                         color: accent.primary,
                         borderColor: `${accent.primary}25`,
@@ -159,10 +159,10 @@ const Experience = () => {
     <section id="experience" ref={ref} className="relative py-28 px-6 bg-gradient-mesh">
       <div
         className="gradient-orb w-[360px] h-[360px] bottom-20 left-[-80px] pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(34,211,238,0.06) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%)' }}
       />
 
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -171,7 +171,7 @@ const Experience = () => {
         >
           <p className="section-label mb-3">Experience</p>
           <h2 className="section-heading">WHERE I'VE WORKED</h2>
-          <p className="font-body text-slate-500 mt-4 max-w-md mx-auto text-sm">
+          <p className="font-body text-slate-500 mt-4 max-w-md mx-auto text-base">
             Professional journey — click any card to expand details.
           </p>
         </motion.div>
@@ -182,7 +182,7 @@ const Experience = () => {
           style={{
             borderLeft: '2px solid',
             borderImageSlice: 1,
-            borderImageSource: 'linear-gradient(to bottom, #22d3ee, rgba(34,211,238,0.1))',
+            borderImageSource: 'linear-gradient(to bottom, #3b82f6, rgba(59,130,246,0.1))',
           }}
         >
           {experiences.map((exp, i) => (

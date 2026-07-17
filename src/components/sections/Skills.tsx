@@ -40,10 +40,10 @@ const iconMap: Record<string, React.ComponentType<any>> = {
 }
 
 const categoryColors: Record<SkillCategory, string> = {
-  Languages: '#22d3ee',
-  Frontend: '#a78bfa',
+  Languages: '#3b82f6',
+  Frontend: '#8b5cf6',
   Backend: '#34d399',
-  Databases: '#fbbf24',
+  Databases: '#f59e0b',
   'Tools & DevOps': '#f472b6',
 }
 
@@ -63,27 +63,27 @@ const SkillCard = ({ name, iconKey, color, bgColor, index }: SkillCardProps) => 
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.35, delay: index * 0.04, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ y: -5, scale: 1.04 }}
-      className="group relative flex flex-col items-center gap-3 p-5 rounded-2xl border border-white/[0.07] bg-dark-900 cursor-default select-none transition-all duration-300 hover:border-white/20"
+      className="group relative flex flex-col items-center gap-3 p-6 rounded-2xl border border-white/[0.07] bg-dark-900 cursor-default select-none transition-all duration-300 hover:border-white/20"
       style={{
         boxShadow: '0 2px 20px rgba(0,0,0,0.3)',
       }}
     >
       {/* Icon container */}
       <div
-        className="w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+        className="w-16 h-16 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
         style={{ backgroundColor: bgColor, border: `1px solid ${color}30` }}
       >
         {Icon ? (
-          <Icon size={28} style={{ color }} />
+          <Icon size={32} style={{ color }} />
         ) : (
-          <span className="font-mono text-xs font-bold" style={{ color }}>
+          <span className="font-mono text-sm font-bold" style={{ color }}>
             {name.slice(0, 2)}
           </span>
         )}
       </div>
 
       {/* Name */}
-      <span className="font-body text-xs font-medium text-slate-400 group-hover:text-slate-200 text-center transition-colors duration-200 leading-tight">
+      <span className="font-body text-sm font-medium text-slate-400 group-hover:text-slate-200 text-center transition-colors duration-200 leading-tight">
         {name}
       </span>
 
@@ -119,7 +119,7 @@ const Skills = () => {
         style={{ background: 'radial-gradient(circle, rgba(167,139,250,0.07) 0%, transparent 70%)' }}
       />
 
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -129,7 +129,7 @@ const Skills = () => {
         >
           <p className="section-label mb-3">Skills</p>
           <h2 className="section-heading">TECH STACK</h2>
-          <p className="font-body text-slate-500 mt-4 max-w-md mx-auto text-sm">
+          <p className="font-body text-slate-500 mt-4 max-w-md mx-auto text-base">
             Technologies I use to design, build, and ship production software.
           </p>
         </motion.div>
@@ -139,16 +139,16 @@ const Skills = () => {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="flex flex-wrap justify-center gap-2 mb-10"
+          className="flex flex-wrap justify-center gap-2.5 mb-10"
         >
           {categories.map((cat) => {
             const active = activeCategory === cat
-            const accent = cat === 'All' ? '#22d3ee' : categoryColors[cat as SkillCategory]
+            const accent = cat === 'All' ? '#3b82f6' : categoryColors[cat as SkillCategory]
             return (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className="px-4 py-2 rounded-full font-body text-xs font-semibold border transition-all duration-200"
+                className="px-5 py-2.5 rounded-full font-body text-sm font-semibold border transition-all duration-200"
                 style={{
                   borderColor: active ? `${accent}60` : 'rgba(255,255,255,0.08)',
                   backgroundColor: active ? `${accent}14` : 'transparent',
@@ -163,7 +163,7 @@ const Skills = () => {
         </motion.div>
 
         {/* Skills grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
           {filtered.map((skill, i) => (
             <SkillCard key={skill.name} {...skill} index={i} />
           ))}
@@ -175,13 +175,13 @@ const Skills = () => {
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.6 }}
-            className="flex flex-wrap justify-center gap-4 mt-12 pt-8 border-t border-white/[0.06]"
+            className="flex flex-wrap justify-center gap-5 mt-12 pt-8 border-t border-white/[0.06]"
           >
             {skillCategories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className="flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-slate-300 transition-colors duration-200"
+                className="flex items-center gap-2 text-sm font-mono text-slate-500 hover:text-slate-300 transition-colors duration-200"
               >
                 <span
                   className="w-2 h-2 rounded-full"
