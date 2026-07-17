@@ -22,7 +22,7 @@ export const projects: Project[] = [
       'Full-featured service marketplace with JWT authentication, interactive maps via Leaflet.js, English-to-Urdu i18n using i18next, and skeleton loading states for a polished UX.',
     tech: ['React', 'Leaflet.js', 'JWT', 'i18next', 'Node.js', 'MongoDB'],
     githubUrl: 'https://github.com/Nazir-Rizwan/',
-    accent: '#22d3ee',
+    accent: '#3b82f6',
     featured: true,
   },
   {
@@ -35,7 +35,7 @@ export const projects: Project[] = [
       'Built with separate Cashier and Admin roles. Admin gets full feature access including product management, stock overview, record visualization, and data backup. Cashier focuses on daily sales transactions.',
     tech: ['C++', 'SQL Server', 'WinForms', 'Data Backup'],
     githubUrl: 'https://github.com/Nazir-Rizwan/',
-    accent: '#fbbf24',
+    accent: '#f59e0b',
     featured: true,
   },
   {

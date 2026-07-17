@@ -5,7 +5,7 @@ interface CardProps {
   children: React.ReactNode
   className?: string
   hover?: boolean
-  glowColor?: 'cyan' | 'gold' | 'none'
+  glowColor?: 'primary' | 'violet' | 'none'
   onClick?: () => void
 }
 
@@ -17,8 +17,8 @@ const Card: React.FC<CardProps> = ({
   onClick,
 }) => {
   const glowStyles = {
-    cyan: 'hover:border-primary/40 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]',
-    gold: 'hover:border-gold/40 hover:shadow-[0_0_30px_rgba(251,191,36,0.15)]',
+    primary: 'hover:border-primary/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]',
+    violet: 'hover:border-violet/40 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)]',
     none: '',
   }
 

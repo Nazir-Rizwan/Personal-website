@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 interface ButtonProps {
   children: React.ReactNode
-  variant?: 'primary' | 'secondary' | 'ghost' | 'gold'
+  variant?: 'primary' | 'secondary' | 'ghost' | 'violet'
   size?: 'sm' | 'md' | 'lg'
   href?: string
   onClick?: () => void
@@ -37,13 +37,13 @@ const Button: React.FC<ButtonProps> = ({
 
   const variants = {
     primary:
-      'bg-primary text-dark-950 hover:bg-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.35)] hover:shadow-[0_0_30px_rgba(34,211,238,0.55)]',
+      'bg-primary text-white hover:bg-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.35)] hover:shadow-[0_0_30px_rgba(59,130,246,0.55)]',
     secondary:
-      'border border-primary/40 text-primary hover:bg-primary-dim hover:border-primary/80 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)]',
+      'border border-primary/40 text-primary hover:bg-primary-dim hover:border-primary/80 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]',
     ghost:
       'border border-white/10 text-slate-300 hover:text-white hover:border-white/30 hover:bg-white/5',
-    gold:
-      'bg-gold text-dark-950 font-bold hover:bg-amber-300 shadow-[0_0_20px_rgba(251,191,36,0.35)] hover:shadow-[0_0_30px_rgba(251,191,36,0.55)]',
+    violet:
+      'bg-violet text-white font-bold hover:bg-violet-400 shadow-[0_0_20px_rgba(139,92,246,0.35)] hover:shadow-[0_0_30px_rgba(139,92,246,0.55)]',
   }
 
   const classes = `${base} ${sizes[size]} ${variants[variant]} ${className}`

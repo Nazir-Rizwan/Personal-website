@@ -1,16 +1,10 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import {
-  Github, Linkedin, Mail, ArrowDown, Download,
+  Mail, ArrowDown, Download,
   MapPin, GraduationCap, Code2, Rocket
 } from 'lucide-react'
 import Button from '../ui/Button'
-
-const socials = [
-  { icon: Github,   href: 'https://github.com/Nazir-Rizwan/',          label: 'GitHub'   },
-  { icon: Linkedin, href: 'https://linkedin.com/in/nazir-rizwan',       label: 'LinkedIn' },
-  { icon: Mail,     href: 'mailto:mr.nazirrizwan@gmail.com',            label: 'Email'    },
-]
 
 const highlights = [
   { icon: MapPin,        text: 'Lahore, Pakistan'                    },
@@ -48,11 +42,11 @@ const Hero = () => {
       {/* Orbs */}
       <div
         className="gradient-orb w-[600px] h-[600px] top-[-200px] left-[-200px] animate-float-slow"
-        style={{ background: 'radial-gradient(circle, rgba(34,211,238,0.10) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.10) 0%, transparent 70%)' }}
       />
       <div
         className="gradient-orb w-[450px] h-[450px] bottom-[-100px] right-[-100px] animate-float-mid"
-        style={{ background: 'radial-gradient(circle, rgba(251,191,36,0.08) 0%, transparent 70%)', animationDelay: '2s' }}
+        style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%)', animationDelay: '2s' }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-dark-950/30 via-transparent to-dark-950/60 pointer-events-none" />
 
@@ -62,21 +56,8 @@ const Hero = () => {
           {/* ──────────── LEFT: Identity ──────────── */}
           <div className="flex flex-col items-start">
 
-            {/* Available badge */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="mb-8"
-            >
-              <span className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-primary/25 bg-primary/5 font-mono text-xs text-primary tracking-wider uppercase">
-                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                Available for new opportunities
-              </span>
-            </motion.div>
-
             {/* Name — letter-by-letter 3-D flip */}
-            <div className="mb-4" style={{ perspective: '800px' }}>
+            <div className="mb-4 mt-8" style={{ perspective: '800px' }}>
               <h1
                 className="font-display leading-[0.88] tracking-wider text-white"
                 style={{ fontSize: 'clamp(4rem,9vw,8rem)' }}
@@ -89,7 +70,7 @@ const Hero = () => {
               <div className="relative">
                 <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] bg-gradient-to-r from-primary/60 via-primary/20 to-transparent pointer-events-none" />
                 <h1
-                  className="font-display leading-[0.88] tracking-wider text-gradient-cyan relative z-10"
+                  className="font-display leading-[0.88] tracking-wider text-gradient-primary relative z-10"
                   style={{ fontSize: 'clamp(4rem,9vw,8rem)' }}
                 >
                   {'RIZWAN'.split('').map((c, i) => (
@@ -131,27 +112,6 @@ const Hero = () => {
                 <Download size={15} /> Resume
               </Button>
             </motion.div>
-
-            {/* Social icons */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.4 }}
-              className="flex items-center gap-3"
-            >
-              {socials.map(({ icon: Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target={label !== 'Email' ? '_blank' : undefined}
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="w-10 h-10 rounded-xl border border-white/10 bg-dark-900/60 flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary/40 hover:bg-primary/5 hover:shadow-[0_0_16px_rgba(34,211,238,0.2)] transition-all duration-200"
-                >
-                  <Icon size={16} />
-                </a>
-              ))}
-            </motion.div>
           </div>
 
           {/* ──────────── RIGHT: About ──────────── */}
@@ -188,7 +148,7 @@ const Hero = () => {
                   key={s.label}
                   className="flex flex-col items-center justify-center py-5 rounded-2xl border border-white/[0.07] bg-dark-900 hover:border-primary/20 transition-colors duration-200"
                 >
-                  <span className="font-display text-4xl text-gradient-cyan mb-1">{s.value}</span>
+                  <span className="font-display text-4xl text-gradient-primary mb-1">{s.value}</span>
                   <span className="font-mono text-[10px] text-slate-500 text-center px-2">{s.label}</span>
                 </div>
               ))}

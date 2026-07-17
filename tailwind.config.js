@@ -5,17 +5,17 @@ export default {
     extend: {
       colors: {
         dark: {
-          950: '#07091f',
-          900: '#0d1330',
-          800: '#111c40',
-          700: '#1a2850',
-          600: '#223060',
+          950: '#0f172a',
+          900: '#1e293b',
+          800: '#334155',
+          700: '#475569',
+          600: '#64748b',
         },
-        primary: '#22d3ee',
-        'primary-dim': 'rgba(34,211,238,0.15)',
-        'primary-glow': 'rgba(34,211,238,0.4)',
-        gold: '#fbbf24',
-        'gold-dim': 'rgba(251,191,36,0.15)',
+        primary: '#3b82f6',
+        'primary-dim': 'rgba(59,130,246,0.15)',
+        'primary-glow': 'rgba(59,130,246,0.4)',
+        violet: '#8b5cf6',
+        'violet-dim': 'rgba(139,92,246,0.15)',
       },
       fontFamily: {
         display: ['"Bebas Neue"', 'sans-serif'],
@@ -24,7 +24,7 @@ export default {
       },
       backgroundImage: {
         'dot-grid':
-          'radial-gradient(circle, rgba(34,211,238,0.15) 1px, transparent 1px)',
+          'radial-gradient(circle, rgba(59,130,246,0.15) 1px, transparent 1px)',
       },
       backgroundSize: {
         'dot-grid': '28px 28px',
