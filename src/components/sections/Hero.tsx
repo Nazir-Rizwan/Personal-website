@@ -6,17 +6,23 @@ import {
 } from 'lucide-react'
 import Button from '../ui/Button'
 
+const socials = [
+  { icon: Github, href: 'https://github.com/Nazir-Rizwan/', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://linkedin.com/in/nazir-rizwan', label: 'LinkedIn' },
+  { icon: Mail, href: 'mailto:mr.nazirrizwan@gmail.com', label: 'Email' },
+]
+
 const highlights = [
-  { icon: MapPin,        text: 'Lahore, Pakistan'                    },
-  { icon: GraduationCap, text: 'COMSATS University  2020 – 2024'    },
-  { icon: Code2,         text: 'React · Node · Nest · Next'          },
-  { icon: Rocket,        text: 'Open to remote work'                 },
+  { icon: MapPin, text: 'Lahore, Pakistan' },
+  { icon: GraduationCap, text: 'COMSATS University  2020 – 2024' },
+  { icon: Code2, text: 'React · Node · Nest · Next' },
+  { icon: Rocket, text: 'Open to remote work' },
 ]
 
 // Only two stats on the right panel
 const stats = [
-  { value: '2+',  label: 'Years of Experience' },
-  { value: '10+', label: 'Projects Delivered'  },
+  { value: '2+', label: 'Years of Experience' },
+  { value: '15+', label: 'Projects Delivered' },
 ]
 
 const NameLetter = ({ char, delay }: { char: string; delay: number }) => (
@@ -32,7 +38,7 @@ const NameLetter = ({ char, delay }: { char: string; delay: number }) => (
 
 const Hero = () => {
   const rightRef = useRef(null)
-  const inView    = useInView(rightRef, { once: true, margin: '-60px' })
+  const inView = useInView(rightRef, { once: true, margin: '-60px' })
 
   return (
     <section
@@ -104,8 +110,8 @@ const Hero = () => {
               transition={{ delay: 1.25, duration: 0.5 }}
               className="flex flex-wrap items-center gap-3 mb-10"
             >
-              <Button variant="primary"    size="md" href="#projects">View My Work</Button>
-              <Button variant="secondary"  size="md" href="#contact">
+              <Button variant="primary" size="md" href="#projects">View My Work</Button>
+              <Button variant="secondary" size="md" href="#contact">
                 <Mail size={15} /> Get In Touch
               </Button>
               <Button variant="ghost" size="md" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
