@@ -1,11 +1,5 @@
-import { Github, Linkedin, Mail, Code2, ArrowUp } from 'lucide-react'
+import { Code2, ArrowUp } from 'lucide-react'
 import { motion } from 'framer-motion'
-
-const socials = [
-  { icon: Github, href: 'https://github.com/Nazir-Rizwan/', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com/in/nazir-rizwan', label: 'LinkedIn' },
-  { icon: Mail, href: 'mailto:mr.nazirrizwan@gmail.com', label: 'Email' },
-]
 
 const Footer = () => {
   return (
@@ -25,22 +19,6 @@ const Footer = () => {
             <p className="font-body text-xs text-slate-500 mt-1">
               Built with React · Vite · Tailwind · Framer Motion
             </p>
-          </div>
-
-          {/* Socials */}
-          <div className="flex items-center gap-3">
-            {socials.map(({ icon: Icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                target={label !== 'Email' ? '_blank' : undefined}
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary/40 hover:bg-primary/5 transition-all duration-200"
-              >
-                <Icon size={16} />
-              </a>
-            ))}
           </div>
 
           {/* Copyright + scroll to top */}

@@ -1,4 +1,4 @@
-import Navbar from './components/layout/Navbar'
+import Sidebar from './components/layout/Sidebar'
 import Footer from './components/layout/Footer'
 import Hero from './components/sections/Hero'
 import Skills from './components/sections/Skills'
@@ -9,15 +9,17 @@ import Contact from './components/sections/Contact'
 function App() {
   return (
     <div className="min-h-screen bg-dark-950 text-slate-100 overflow-x-hidden">
-      <Navbar />
-      <main>
-        <Hero />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
+      <Sidebar />
+      <div className="lg:pl-[300px] xl:pl-[340px] pt-[68px] lg:pt-0">
+        <main>
+          <Hero />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </div>
   )
 }

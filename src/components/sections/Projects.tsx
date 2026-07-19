@@ -31,12 +31,12 @@ const ProjectDetail = ({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -30 }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-      className="max-w-3xl mx-auto"
+      className="max-w-4xl mx-auto"
     >
       {/* Back button */}
       <button
         onClick={onBack}
-        className="flex items-center gap-2 font-body text-sm text-slate-400 hover:text-primary mb-8 transition-colors duration-200 group"
+        className="flex items-center gap-2 font-body text-base text-slate-400 hover:text-primary mb-8 transition-colors duration-200 group"
       >
         <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform duration-200" />
         Back to Projects
@@ -61,7 +61,7 @@ const ProjectDetail = ({
             <FolderGit2 size={40} style={{ color: project.accent }} />
           </div>
           <span
-            className="font-mono text-xs tracking-widest uppercase px-3 py-1 rounded-full border"
+            className="font-mono text-sm tracking-widest uppercase px-3 py-1 rounded-full border"
             style={{ color: project.accent, borderColor: `${project.accent}35`, backgroundColor: `${project.accent}10` }}
           >
             {project.type}
@@ -70,10 +70,10 @@ const ProjectDetail = ({
       </div>
 
       {/* Content */}
-      <div className="p-8 rounded-2xl border border-white/[0.07] bg-dark-900 space-y-6">
+      <div className="p-9 rounded-2xl border border-white/[0.07] bg-dark-900 space-y-7">
         <div>
           <h2 className="font-display text-4xl text-white tracking-wide mb-3">{project.title}</h2>
-          <p className="font-body text-slate-300 text-base leading-relaxed">{project.description}</p>
+          <p className="font-body text-slate-300 text-lg leading-relaxed">{project.description}</p>
         </div>
 
         <div
@@ -82,17 +82,17 @@ const ProjectDetail = ({
         />
 
         <div>
-          <p className="font-mono text-[10px] text-slate-500 tracking-widest uppercase mb-3">Details</p>
-          <p className="font-body text-slate-400 text-sm leading-relaxed">{project.longDescription}</p>
+          <p className="font-mono text-xs text-slate-500 tracking-widest uppercase mb-3">Details</p>
+          <p className="font-body text-slate-400 text-base leading-relaxed">{project.longDescription}</p>
         </div>
 
         <div>
-          <p className="font-mono text-[10px] text-slate-500 tracking-widest uppercase mb-3">Tech Stack</p>
+          <p className="font-mono text-xs text-slate-500 tracking-widest uppercase mb-3">Tech Stack</p>
           <div className="flex flex-wrap gap-2">
             {project.tech.map((t) => (
               <span
                 key={t}
-                className="font-mono text-xs px-3 py-1.5 rounded-lg border"
+                className="font-mono text-sm px-3 py-1.5 rounded-lg border"
                 style={{
                   color: project.accent,
                   borderColor: `${project.accent}30`,
@@ -111,7 +111,7 @@ const ProjectDetail = ({
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-body text-sm font-medium transition-all duration-200 hover:-translate-y-0.5"
+            className="flex items-center gap-2 px-5 py-3 rounded-xl font-body text-base font-medium transition-all duration-200 hover:-translate-y-0.5"
             style={{
               borderColor: `${project.accent}35`,
               color: project.accent,
@@ -119,7 +119,7 @@ const ProjectDetail = ({
               border: `1px solid ${project.accent}35`,
             }}
           >
-            <Github size={15} />
+            <Github size={17} />
             View Source Code
           </a>
           {project.liveUrl && (
@@ -127,9 +127,9 @@ const ProjectDetail = ({
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/10 font-body text-sm text-slate-400 hover:text-white hover:border-white/25 transition-all duration-200 hover:-translate-y-0.5"
+              className="flex items-center gap-2 px-5 py-3 rounded-xl border border-white/10 font-body text-base text-slate-400 hover:text-white hover:border-white/25 transition-all duration-200 hover:-translate-y-0.5"
             >
-              <ExternalLink size={15} />
+              <ExternalLink size={17} />
               Live Demo
             </a>
           )}
@@ -156,24 +156,24 @@ const ProjectCard = ({
     animate={inView ? { opacity: 1, y: 0 } : {}}
     transition={{ duration: 0.55, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
     whileHover={{ y: -4 }}
-    className="group flex flex-col p-6 rounded-2xl border border-white/[0.07] bg-dark-900 hover:border-white/15 transition-all duration-300 cursor-pointer"
+    className="group flex flex-col p-8 rounded-2xl border border-white/[0.07] bg-dark-900 hover:border-white/15 transition-all duration-300 cursor-pointer"
     style={{ boxShadow: `0 2px 24px ${project.accent}05` }}
     onClick={() => onSelect(project)}
   >
     {/* Top row */}
-    <div className="flex items-start justify-between mb-4">
+    <div className="flex items-start justify-between mb-5">
       <div
-        className="w-11 h-11 rounded-xl border flex items-center justify-center"
+        className="w-14 h-14 rounded-xl border flex items-center justify-center"
         style={{
           borderColor: `${project.accent}30`,
           backgroundColor: `${project.accent}10`,
         }}
       >
-        <FolderGit2 size={20} style={{ color: project.accent }} />
+        <FolderGit2 size={24} style={{ color: project.accent }} />
       </div>
       {project.featured && (
         <span
-          className="font-mono text-[9px] tracking-widest uppercase px-2 py-0.5 rounded-full border"
+          className="font-mono text-xs tracking-widest uppercase px-2.5 py-1 rounded-full border"
           style={{
             color: project.accent,
             borderColor: `${project.accent}30`,
@@ -187,28 +187,28 @@ const ProjectCard = ({
 
     {/* Type */}
     <span
-      className="font-mono text-[10px] tracking-widest uppercase mb-2"
+      className="font-mono text-xs tracking-widest uppercase mb-2.5"
       style={{ color: `${project.accent}90` }}
     >
       {project.type}
     </span>
 
     {/* Title */}
-    <h3 className="font-body font-semibold text-white text-lg mb-2 group-hover:text-slate-100 transition-colors leading-tight">
+    <h3 className="font-body font-semibold text-white text-2xl mb-3 group-hover:text-slate-100 transition-colors leading-tight">
       {project.title}
     </h3>
 
     {/* Short summary */}
-    <p className="font-body text-slate-500 text-sm leading-relaxed mb-5 flex-1">
+    <p className="font-body text-slate-400 text-base leading-relaxed mb-6 flex-1">
       {summaries[project.id] || project.description}
     </p>
 
     {/* Tech pills */}
-    <div className="flex flex-wrap gap-1.5 mb-5">
+    <div className="flex flex-wrap gap-2 mb-6">
       {project.tech.slice(0, 4).map((t) => (
         <span
           key={t}
-          className="font-mono text-[10px] px-2 py-0.5 rounded border"
+          className="font-mono text-xs px-2.5 py-1 rounded border"
           style={{
             color: `${project.accent}90`,
             borderColor: `${project.accent}20`,
@@ -219,7 +219,7 @@ const ProjectCard = ({
         </span>
       ))}
       {project.tech.length > 4 && (
-        <span className="font-mono text-[10px] px-2 py-0.5 rounded border border-white/10 text-slate-600">
+        <span className="font-mono text-xs px-2.5 py-1 rounded border border-white/10 text-slate-500">
           +{project.tech.length - 4}
         </span>
       )}
@@ -227,7 +227,7 @@ const ProjectCard = ({
 
     {/* CTA */}
     <button
-      className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl font-body text-sm font-medium border transition-all duration-200 group-hover:opacity-100 opacity-80"
+      className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-body text-base font-medium border transition-all duration-200 group-hover:opacity-100 opacity-80"
       style={{
         color: project.accent,
         borderColor: `${project.accent}30`,
@@ -235,7 +235,7 @@ const ProjectCard = ({
       }}
     >
       View Project
-      <ExternalLink size={13} />
+      <ExternalLink size={15} />
     </button>
   </motion.div>
 )
@@ -258,7 +258,7 @@ const Projects = () => {
         style={{ background: 'radial-gradient(circle, rgba(167,139,250,0.05) 0%, transparent 70%)' }}
       />
 
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -268,7 +268,7 @@ const Projects = () => {
         >
           <p className="section-label mb-3">Projects</p>
           <h2 className="section-heading">WHAT I'VE BUILT</h2>
-          <p className="font-body text-slate-500 mt-4 max-w-md mx-auto text-sm">
+          <p className="font-body text-slate-500 mt-4 max-w-md mx-auto text-base">
             Click any project card to explore the full story.
           </p>
         </motion.div>
@@ -285,7 +285,7 @@ const Projects = () => {
               transition={{ duration: 0.3 }}
             >
               {/* All projects grid */}
-              <div className="grid sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6">
                 {projects.map((p, i) => (
                   <ProjectCard
                     key={p.id}
