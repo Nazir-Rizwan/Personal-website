@@ -6,12 +6,6 @@ import {
 } from 'lucide-react'
 import Button from '../ui/Button'
 
-const socials = [
-  { icon: Github, href: 'https://github.com/Nazir-Rizwan/', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com/in/nazir-rizwan', label: 'LinkedIn' },
-  { icon: Mail, href: 'mailto:mr.nazirrizwan@gmail.com', label: 'Email' },
-]
-
 const highlights = [
   { icon: MapPin, text: 'Lahore, Pakistan' },
   { icon: GraduationCap, text: 'COMSATS University  2020 – 2024' },
