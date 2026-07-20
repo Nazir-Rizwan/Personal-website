@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - add-CICD-conf
+      - master
 
 jobs:
   deploy:
